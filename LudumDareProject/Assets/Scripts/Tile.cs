@@ -16,6 +16,8 @@ public class Tile : MonoBehaviour
 
     [SerializeField]
     private Gift gift;
+
+    public bool hasWalkHere = false;
     
     void Start()
     {
@@ -35,12 +37,13 @@ public class Tile : MonoBehaviour
 
     public void resetTile()
     {
-        gameObject.SetActive(true);
-        setTileType(this.tileType);
+        setTileType(TileType.Snow);
+        gameObject.SetActive(true);      
+        this.hasWalkHere = false;
 
         if (gift != null)
         {
-            this.gift.gameObject.SetActive(true);
+            this.gift.gameObject.SetActive(false);
         }
     }
 
@@ -53,12 +56,20 @@ public class Tile : MonoBehaviour
     }
 
     public void checkTileState()
-    {
-        if(this.tileState == TileState.isRight)
+    { 
+        if (this.tileState == TileState.isRight && !hasWalkHere)
         {
-            this.currentTileSprite.sprite = this.tileSpriteStates[2];
-           //som feed back que acerto
-           // remove neve do caminho trocando sprite pelod e gelo quebrado
+            this.hasWalkHere = true;
+
+            setTileType(TileType.Cracked);
+
+            if (gift != null)
+            {
+                this.gift.gameObject.SetActive(true);
+            }
+
+            //som feed back que acerto
+            // remove neve do caminho trocando sprite pelo de gelo quebrado
         }
         else
         {
