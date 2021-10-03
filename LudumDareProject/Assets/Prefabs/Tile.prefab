@@ -48,10 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTileSprite: {fileID: 4040306208383317765}
   tileSpriteStates:
-  - {fileID: 21300000, guid: 2e2e3a23540da0e47b40d7d1ef6ea4ed, type: 3}
+  - {fileID: 21300000, guid: 124e319fe5fabce49bb6cdf0ebe452f0, type: 3}
   - {fileID: 21300000, guid: b7dc5986580acf643a9cdf4d8d2fc440, type: 3}
+  - {fileID: 21300000, guid: 2e2e3a23540da0e47b40d7d1ef6ea4ed, type: 3}
   tileAnimator: {fileID: 0}
-  state: 0
+  tileType: 0
+  tileState: 0
 --- !u!1 &4040306208383317766
 GameObject:
   m_ObjectHideFlags: 0
