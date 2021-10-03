@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public enum TileType
-{
-    Snow,
-    Ice,
-    Cracked
+public enum TileState
+{ 
+    isWrong,
+    isRight
 }
