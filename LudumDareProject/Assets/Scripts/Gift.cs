@@ -19,6 +19,7 @@ public class Gift : MonoBehaviour
     public void showGift()
     {
         this.gameObject.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("sparkle");
+        FindObjectOfType<GameManager>().victory();
     }
-
 }
