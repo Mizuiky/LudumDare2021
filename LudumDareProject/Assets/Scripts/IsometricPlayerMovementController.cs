@@ -49,7 +49,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
             rbody.position = finalPos;
         }
 
-        //isoRenderer.SetDirection(lastButton, moving);
+        isoRenderer.SetDirection(lastButton, moving);
     }
 
     private void MovingDirection()
