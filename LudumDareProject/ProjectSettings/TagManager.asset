@@ -9,6 +9,7 @@ TagManager:
   - Orientation
   - Gift
   - Bomb
+  - UI
   layers:
   - Default
   - TransparentFX

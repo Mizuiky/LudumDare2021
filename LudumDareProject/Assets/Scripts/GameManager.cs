@@ -10,16 +10,17 @@ public class GameManager : MonoBehaviour
     public GameObject victoryScreen;
     public GameObject player;
     public AudioManager manager;
+    public Transform initialPlayerPosition;
 
     private bool hasStartGame = false;
     // Start is called before the first frame update
-    void Awake()
+    public void Start()
     {
         callMainMenu();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
        
     }
@@ -28,13 +29,14 @@ public class GameManager : MonoBehaviour
     {
         this.hasStartGame = true;
         this.mainMenuScreen.SetActive(false);
-        this.player.SetActive(true);
+        this.manager.Stop("menu");
         this.manager.Play("Puzzle1");
-        this.tutorialScreen.SetActive(true);
+        this.tutorialScreen.SetActive(true); 
     }
 
     public void gameOver()
     {
+        this.manager.Stop("Puzzle1");
         this.tutorialScreen.SetActive(false);
         this.gameOverScreen.SetActive(true);
         FindObjectOfType<AudioManager>().Play("fail");
@@ -43,10 +45,10 @@ public class GameManager : MonoBehaviour
     public void victory()
     {
         this.tutorialScreen.SetActive(false);
+        this.manager.Stop("Puzzle1");
         this.manager.Play("victoryBellsound");
         this.manager.Play("victoryJjinglebell");
         this.victoryScreen.SetActive(true);
-
     }
 
     public void quitGame()
@@ -56,11 +58,22 @@ public class GameManager : MonoBehaviour
 
     public void callMainMenu()
     {
+        Debug.Log("call menu");
         this.manager.Play("menu");
-        this.player.SetActive(false);
-        this.mainMenuScreen.SetActive(true);
-        this.tutorialScreen.SetActive(false);     
+        this.mainMenuScreen.SetActive(true);   
         this.gameOverScreen.SetActive(false);
         this.victoryScreen.SetActive(false);
+    }
+
+    public void resetGame()
+    {
+        this.player.transform.position = this.initialPlayerPosition.position;
+        this.victoryScreen.SetActive(false);
+        this.tutorialScreen.SetActive(true);
+        this.player.SetActive(true);
+        this.manager.Stop("menu");
+        this.manager.Stop("victoryBellsound");
+        this.manager.Stop("victoryJjinglebell");
+        this.manager.Play("Puzzle1");
     }
 }
