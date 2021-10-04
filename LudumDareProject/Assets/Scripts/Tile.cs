@@ -15,9 +15,9 @@ public class Tile : MonoBehaviour
     public TileState tileState;
 
     [SerializeField]
-    private Gift gift;
+    public Gift gift;
     [SerializeField]
-    private Bomb bomb;
+    public Bomb bomb;
 
     [SerializeField]
     private bool changeTileSprite;
@@ -58,11 +58,11 @@ public class Tile : MonoBehaviour
             setTileType(TileType.Ice);
             if(this.gift != null)
             {
-                this.gift.hideGift();
+                this.gift.hide();
             }
             else if(this.bomb != null)
             {
-                this.bomb.hideBomb();
+                this.bomb.hide();
             }
         }
         gameObject.SetActive(true);  
@@ -118,7 +118,7 @@ public class Tile : MonoBehaviour
         }
     }
 
-    private void setTileType(TileType type)
+    public void setTileType(TileType type)
     {
         switch(type)
         {
