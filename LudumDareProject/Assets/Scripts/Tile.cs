@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        /*if(Input.GetKeyDown(KeyCode.Space))
         {
             this.startIce = true;
         }
@@ -44,7 +44,7 @@ public class Tile : MonoBehaviour
         {
             this.startIce = false;
             this.setTileType(TileType.Snow);
-        }
+        }*/
     }
 
     public void resetTile()
@@ -85,10 +85,6 @@ public class Tile : MonoBehaviour
 
             this.tileAnimator.enabled = true;
 
-            if (gift != null)
-            {
-                this.gift.gameObject.SetActive(true);
-            }
             //som feed back que acerto
             // remove neve do caminho trocando sprite pelo de gelo quebrado
         }
@@ -103,19 +99,33 @@ public class Tile : MonoBehaviour
             Debug.Log("else");
             if (this.tileState == TileState.isWrong && this.tileType == TileType.Cracked)
             {
-                if (bomb != null)
-                {
-                    this.bomb.gameObject.SetActive(true);
-                }
-
                 Debug.Log("else2");
-                FindObjectOfType<AudioManager>().Play("glassCrack");
-                this.gameObject.SetActive(false);
-                FindObjectOfType<GameManager>().gameOver();
-
+                StartCoroutine("destroyIce");
                 //fazer um game over pelo game manageR
             }
         }
+    }
+
+    public IEnumerator destroyIce()
+    {
+        FindObjectOfType<AudioManager>().Play("glassCrack");
+        //animação do gelo quebrando 
+
+        if (this.bomb != null)
+        { 
+            bomb.show();
+
+            yield return new WaitForSeconds(0.5f);
+
+            bomb.explode();
+        }
+        //animação da bomba explodindo
+       
+        yield return new WaitForSeconds(1.6f);
+
+        FindObjectOfType<GameManager>().gameOver();
+
+        Debug.Log("gameover finish");
     }
 
     public void setTileType(TileType type)
