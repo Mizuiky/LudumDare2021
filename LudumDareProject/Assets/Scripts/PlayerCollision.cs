@@ -14,11 +14,11 @@ public class PlayerCollision : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Gift"))
         {
-            collision.gameObject.GetComponentInParent<Gift>().showGift();
+            collision.gameObject.GetComponentInParent<Gift>().open();
         }
         else if (collision.gameObject.CompareTag("Bomb"))
         {
-            collision.gameObject.GetComponentInParent<Bomb>().explodeBomb();
+            collision.gameObject.GetComponentInParent<Bomb>().explode();
         }
     }
 }

@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public AudioManager manager;
     public Transform initialPlayerPosition;
+    public PuzzleManager puzzleManager;
+
+    private PuzzleManager puzzle;
 
     private bool hasStartGame = false;
     // Start is called before the first frame update
@@ -31,7 +34,8 @@ public class GameManager : MonoBehaviour
         this.mainMenuScreen.SetActive(false);
         this.manager.Stop("menu");
         this.manager.Play("Puzzle1");
-        this.tutorialScreen.SetActive(true); 
+        this.tutorialScreen.SetActive(true);
+        StartCoroutine("startSnow");
     }
 
     public void gameOver()
@@ -67,13 +71,27 @@ public class GameManager : MonoBehaviour
 
     public void resetGame()
     {
+        this.puzzleManager.changeTile(TileType.Ice);
+        this.puzzleManager.showTiles();
         this.player.transform.position = this.initialPlayerPosition.position;
         this.victoryScreen.SetActive(false);
+        this.gameOverScreen.SetActive(false);
         this.tutorialScreen.SetActive(true);
         this.player.SetActive(true);
         this.manager.Stop("menu");
+        this.manager.Stop("fail");
         this.manager.Stop("victoryBellsound");
         this.manager.Stop("victoryJjinglebell");
         this.manager.Play("Puzzle1");
+        StartCoroutine("startSnow");
+    }
+
+    public IEnumerator startSnow()
+    {
+        this.puzzleManager.showItens();
+        yield return new WaitForSeconds(1.6f);
+        this.puzzleManager.changeTile(TileType.Snow);
+        this.puzzleManager.hideItens();
+        //this.puzzleManager.showItens();    
     }
 }

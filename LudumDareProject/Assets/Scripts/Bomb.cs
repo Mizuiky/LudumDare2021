@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    private void Start()
-    {
-        this.gameObject.SetActive(false);
-    }
-    public void explodeBomb()
+    public void explode()
     {
         this.gameObject.SetActive(true);
         //aparecer bomba
@@ -18,8 +14,13 @@ public class Bomb : MonoBehaviour
         //set active false
     }
 
-    public void hideBomb()
+    public void hide()
     {
         this.gameObject.SetActive(false);
+    }
+
+    public void show()
+    {
+        this.gameObject.SetActive(true);
     }
 }

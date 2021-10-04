@@ -9,16 +9,20 @@ public class Gift : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void hideGift()
+    public void hide()
     {
         this.gameObject.SetActive(false);
         //player adiciona pontos ao score
         //som de pegou um objeto, pode ser um plim
     }
 
-    public void showGift()
+    public void show()
     {
-        this.gameObject.SetActive(true);
+        this.gameObject.SetActive(true); 
+    }
+
+    public void open()
+    {
         FindObjectOfType<AudioManager>().Play("sparkle");
         FindObjectOfType<GameManager>().victory();
     }
