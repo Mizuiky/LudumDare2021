@@ -16,5 +16,9 @@ public class PlayerCollision : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<Gift>().showGift();
         }
+        else if (collision.gameObject.CompareTag("Bomb"))
+        {
+            collision.gameObject.GetComponentInParent<Bomb>().explodeBomb();
+        }
     }
 }
