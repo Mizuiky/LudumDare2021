@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Gift"))
         {
-            collision.gameObject.GetComponentInParent<Gift>().getGift();
+            collision.gameObject.GetComponentInParent<Gift>().showGift();
         }
     }
 }

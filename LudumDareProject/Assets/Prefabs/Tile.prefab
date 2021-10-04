@@ -29,7 +29,6 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4040306208383317764}
-  - {fileID: 9082165978814144524}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,11 +49,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 124e319fe5fabce49bb6cdf0ebe452f0, type: 3}
   - {fileID: 21300000, guid: b7dc5986580acf643a9cdf4d8d2fc440, type: 3}
   - {fileID: 21300000, guid: 2e2e3a23540da0e47b40d7d1ef6ea4ed, type: 3}
-  tileAnimator: {fileID: 0}
-  tileType: 0
-  tileState: 0
+  tileAnimator: {fileID: 1861395888588815365}
+  tileType: 1
+  tileState: 1
   gift: {fileID: 0}
-  changeTileSprite: 0
+  changeTileSprite: 1
   hasWalkHere: 0
 --- !u!1 &4040306208383317766
 GameObject:
@@ -175,33 +174,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &4350769409985199017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9082165978814144524}
-  m_Layer: 0
-  m_Name: TileAnimation
-  m_TagString: Tile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9082165978814144524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4350769409985199017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4040306208214634793}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

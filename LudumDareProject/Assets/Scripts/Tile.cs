@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
     [SerializeField]
     private SpriteRenderer currentTileSprite;
     [SerializeField]
-    private Sprite[] tileSpriteStates; 
+    private Sprite[] tileSpriteStates;
     [SerializeField]
     private Animator tileAnimator;
 
@@ -21,6 +21,10 @@ public class Tile : MonoBehaviour
     private bool changeTileSprite;
 
     public bool hasWalkHere = false;
+
+    private int countSteps = 0;
+
+    private bool startIce = false;
     
     void Start()
     {
@@ -30,19 +34,30 @@ public class Tile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void setTileAnimation()
-    {
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            this.startIce = true;
+        }
+        if(this.startIce)
+        {
+            this.startIce = false;
+            this.setTileType(TileType.Snow);
+        }
     }
 
     public void resetTile()
     {
+        this.tileAnimator.enabled = false;
+
+        this.startIce = false;
+
         if (changeTileSprite)
         {
-            setTileType(TileType.Snow);
+            setTileType(TileType.Ice);
+            if(this.gift != null)
+            {
+                this.gift.hideGift();
+            }
         }
         gameObject.SetActive(true);  
        
@@ -56,12 +71,18 @@ public class Tile : MonoBehaviour
 
     public void checkTileState()
     {
+        countSteps++;
+
         Debug.Log("checktilestate");
         if (this.tileState == TileState.isRight && !hasWalkHere)
         {
             this.hasWalkHere = true;
 
+            this.tileType = TileType.Cracked;
+
             setTileType(TileType.Cracked);
+
+            this.tileAnimator.enabled = true;
 
             if (gift != null)
             {
@@ -73,16 +94,22 @@ public class Tile : MonoBehaviour
         }
         else
         {
-            if (this.tileType == TileType.Cracked)
+            //mudar sprite para quebrar o gelo  
+
+            setTileType(TileType.Cracked);
+
+            this.tileType = TileType.Cracked;
+
+            Debug.Log("else");
+            if (this.tileState == TileState.isWrong && this.tileType == TileType.Cracked)
             {
-                //ativar animação de quebrar o gelo
+                Debug.Log("else2");
+                this.tileAnimator.SetBool("ice", true);
+                this.currentTileSprite.sprite = null;
+                //fazer um game over pelo game manager
 
                 //adicionar um som feedback de quebrando o gelo
             }
-
-            setTileType(TileType.Cracked);
-            //mudar sprite para quebrar o gelo
-            //fazer um game over pelo game manager
         }
     }
 

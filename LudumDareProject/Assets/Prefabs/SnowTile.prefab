@@ -83,5 +83,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SnowTile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4040306208214634792, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
+    - {fileID: 1861395888588815365, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
