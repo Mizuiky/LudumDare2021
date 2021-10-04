@@ -16,6 +16,8 @@ public class Tile : MonoBehaviour
 
     [SerializeField]
     private Gift gift;
+    [SerializeField]
+    private Bomb bomb;
 
     [SerializeField]
     private bool changeTileSprite;
@@ -58,15 +60,14 @@ public class Tile : MonoBehaviour
             {
                 this.gift.hideGift();
             }
+            else if(this.bomb != null)
+            {
+                this.bomb.hideBomb();
+            }
         }
         gameObject.SetActive(true);  
        
         this.hasWalkHere = false;
-
-        if (gift != null)
-        {
-            this.gift.gameObject.SetActive(true);
-        }
     }
 
     public void checkTileState()
@@ -88,7 +89,6 @@ public class Tile : MonoBehaviour
             {
                 this.gift.gameObject.SetActive(true);
             }
-
             //som feed back que acerto
             // remove neve do caminho trocando sprite pelo de gelo quebrado
         }
@@ -103,9 +103,15 @@ public class Tile : MonoBehaviour
             Debug.Log("else");
             if (this.tileState == TileState.isWrong && this.tileType == TileType.Cracked)
             {
+                if (bomb != null)
+                {
+                    this.bomb.gameObject.SetActive(true);
+                }
+
                 Debug.Log("else2");
                 FindObjectOfType<AudioManager>().Play("glassCrack");
                 this.gameObject.SetActive(false);
+                FindObjectOfType<GameManager>().gameOver();
 
                 //fazer um game over pelo game manageR
             }

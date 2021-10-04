@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Gift : MonoBehaviour
 {
+    private void Start()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     public void hideGift()
     {
         this.gameObject.SetActive(false);
