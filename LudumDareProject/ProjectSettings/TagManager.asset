@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tile
+  - SnowTile
+  - Orientation
+  - Gift
   layers:
   - Default
   - TransparentFX

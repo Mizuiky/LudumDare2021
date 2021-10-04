@@ -9,8 +9,10 @@ public class Orientation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Tile")
+        Debug.Log("Orientation");
+        if (collision.gameObject.CompareTag("Tile"))
         {
+            Debug.Log("Orientation entered");
             SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
             tileBounds = sr.bounds;
             hasTile = true;
@@ -19,6 +21,6 @@ public class Orientation : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        hasTile = false;
+        hasTile = false;    
     }
 }

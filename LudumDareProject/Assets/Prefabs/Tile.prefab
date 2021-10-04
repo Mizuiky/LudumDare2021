@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4040306208214634792}
   m_Layer: 0
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +54,8 @@ MonoBehaviour:
   tileType: 0
   tileState: 0
   gift: {fileID: 0}
+  changeTileSprite: 0
+  hasWalkHere: 0
 --- !u!1 &4040306208383317766
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040306208383317764}
   - component: {fileID: 4040306208383317765}
-  - component: {fileID: 3579685432565121593}
+  - component: {fileID: 6265913007780963227}
   m_Layer: 0
   m_Name: TileSprite
   m_TagString: Tile
@@ -137,8 +139,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3579685432565121593
-PolygonCollider2D:
+--- !u!58 &6265913007780963227
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,21 +153,8 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.78125, y: 11.25}
-    newSize: {x: 7.63, y: 3.61}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 11.668711, y: 0.7746661}
-      - {x: -1.0436504, y: 5.517717}
-      - {x: -11.600739, y: 1.013953}
-      - {x: 0.9665561, y: -3.668719}
+  serializedVersion: 2
+  m_Radius: 2.84
 --- !u!1 &4350769409985199017
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +167,7 @@ GameObject:
   - component: {fileID: 354791328758934372}
   m_Layer: 0
   m_Name: TileAnimation
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

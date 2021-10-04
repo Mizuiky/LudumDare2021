@@ -83,10 +83,13 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
     private void Move(Orientation or)
     {
-        initialPos = rbody.position;
-        finalPos = new Vector2(or.tileBounds.center.x, or.tileBounds.center.y);
-        Debug.Log(finalPos);
-        moving = true;
+        if(or.hasTile)
+        {
+            initialPos = rbody.position;
+            finalPos = new Vector2(or.tileBounds.center.x, or.tileBounds.center.y);
+            Debug.Log(finalPos);
+            moving = true;
+        }   
     }
 
     private void CanMoveAgain()
