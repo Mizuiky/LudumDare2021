@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2469190217276666442, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
+      propertyPath: m_TagString
+      value: SnowTile
+      objectReference: {fileID: 0}
     - target: {fileID: 3579685432565121593, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 23.9375
@@ -63,9 +67,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4040306208214634794, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
+      propertyPath: m_TagString
+      value: SnowTile
+      objectReference: {fileID: 0}
     - target: {fileID: 4040306208383317765, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 124e319fe5fabce49bb6cdf0ebe452f0, type: 3}
+    - target: {fileID: 4040306208383317766, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
+      propertyPath: m_TagString
+      value: SnowTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350769409985199017, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}
+      propertyPath: m_TagString
+      value: SnowTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162d28f3d8fcfc148a7e5c92b887aec5, type: 3}

@@ -17,6 +17,9 @@ public class Tile : MonoBehaviour
     [SerializeField]
     private Gift gift;
 
+    [SerializeField]
+    private bool changeTileSprite;
+
     public bool hasWalkHere = false;
     
     void Start()
@@ -37,26 +40,23 @@ public class Tile : MonoBehaviour
 
     public void resetTile()
     {
-        setTileType(TileType.Snow);
-        gameObject.SetActive(true);      
+        if (changeTileSprite)
+        {
+            setTileType(TileType.Snow);
+        }
+        gameObject.SetActive(true);  
+       
         this.hasWalkHere = false;
 
         if (gift != null)
         {
-            this.gift.gameObject.SetActive(false);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.tag == "Player")
-        {
-            this.checkTileState();
+            this.gift.gameObject.SetActive(true);
         }
     }
 
     public void checkTileState()
-    { 
+    {
+        Debug.Log("checktilestate");
         if (this.tileState == TileState.isRight && !hasWalkHere)
         {
             this.hasWalkHere = true;
@@ -80,7 +80,7 @@ public class Tile : MonoBehaviour
                 //adicionar um som feedback de quebrando o gelo
             }
 
-            this.tileType = TileType.Cracked;
+            setTileType(TileType.Cracked);
             //mudar sprite para quebrar o gelo
             //fazer um game over pelo game manager
         }
