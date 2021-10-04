@@ -104,11 +104,10 @@ public class Tile : MonoBehaviour
             if (this.tileState == TileState.isWrong && this.tileType == TileType.Cracked)
             {
                 Debug.Log("else2");
-                this.tileAnimator.SetBool("ice", true);
-                this.currentTileSprite.sprite = null;
-                //fazer um game over pelo game manager
+                FindObjectOfType<AudioManager>().Play("glassCrack");
+                this.gameObject.SetActive(false);
 
-                //adicionar um som feedback de quebrando o gelo
+                //fazer um game over pelo game manageR
             }
         }
     }

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1438687579081977575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438687579081974041}
+  - component: {fileID: 1438687579081974040}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438687579081974041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438687579081977575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06471918, y: -0.1849072, z: -0.5216487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438687579081974040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438687579081977575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c017ba7da516ced4faaebbc0ff613956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: MainMenu
+    audioClip: {fileID: 8300000, guid: 8f564cb020362bb4e90d0e86de454cdc, type: 3}
+    source: {fileID: 0}
+    volume: 0.24
+    pitch: 0.79
+    loop: 0
+  - name: Puzzle1
+    audioClip: {fileID: 8300000, guid: 0d63ae268a8ac9d438448018f50b111f, type: 3}
+    source: {fileID: 0}
+    volume: 0.257
+    pitch: 0.88
+    loop: 0
+  - name: Puzzle2
+    audioClip: {fileID: 8300000, guid: b6b39d1b4a16ce846a3410b7f1b5535b, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 0
+    loop: 0
+  - name: victoryJjinglebell
+    audioClip: {fileID: 8300000, guid: f882c595ca092dd47a0d35fd872dae51, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 0.83
+    loop: 0
+  - name: victoryBellsound
+    audioClip: {fileID: 8300000, guid: 6c889b9f72b02304c95a72a8a9dbff85, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 0.77
+    loop: 0
+  - name: derrota risada
+    audioClip: {fileID: 8300000, guid: 0e37d715bee985a44b2dfb1b5288a7be, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 1.11
+    loop: 0
+  - name: glassCrack
+    audioClip: {fileID: 8300000, guid: 7967ee63de8d1544db190ac10cd7f0eb, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 1.04
+    loop: 0
+  - name: bombExplosion
+    audioClip: {fileID: 8300000, guid: 33a7359a5bfd6c2479495291de352e57, type: 3}
+    source: {fileID: 0}
+    volume: 0.317
+    pitch: 1.11
+    loop: 0
