@@ -23,7 +23,17 @@ public class Gift : MonoBehaviour
 
     public void open()
     {
+        StartCoroutine("findGift");    
+    }
+
+    public IEnumerator findGift()
+    {
         FindObjectOfType<AudioManager>().Play("sparkle");
+        //animação do gelo quebrando 
+
+        this.show();
+
+        yield return new WaitForSeconds(1.3f);
         FindObjectOfType<GameManager>().victory();
     }
 }
